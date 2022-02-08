@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp">
+
+    <ImageView
+        android:layout_margin="30dp"
+        android:layout_width="500px"
+        android:layout_height="500px"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:src="@drawable/film"
+        android:orientation="vertical"/>
+
+    <TextView
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:shadowColor="#4D000000"
+        android:shadowDy="10.0"
+        android:shadowRadius="1.0"
+        android:text="MOV"
+        android:textAlignment="center"
+        android:textColor="#FFFEF3"
+        android:textSize="10dp" />
+
+    <TextView
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/dohyun"
+        android:shadowColor="#4D000000"
+        android:shadowDy="17.0"
+        android:shadowRadius="1.0"
+        android:text="Menu"
+        android:textAlignment="center"
+        android:textColor="#FFFEF3"
+        android:textSize="40dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="#ffffff"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

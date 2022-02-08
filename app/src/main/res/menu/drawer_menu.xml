@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/drawer_UserRecord"
+        android:title="사용자 감상기록"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/drawer_WatchAlone"
+        android:title="감상기록 남기기-혼자보기"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/drawer_WatchTogether"
+        android:title="감상기록 남기기-혼자보기"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/drawer_Help"
+        android:title="도움말"
+        app:showAsAction="never" />
+
+    <!--공백을 위한 의미없는 아이템 그룹-->
+    <group
+        android:checkableBehavior="none">
+        <item
+            android:title=""
+            app:showAsAction="never" />
+        <item
+            android:title=""
+            app:showAsAction="never" />
+        <item
+            android:title=""
+            app:showAsAction="never" />
+    </group>
+
+    <item
+        android:id="@+id/drawer_Logout"
+        android:title="로그아웃"
+        app:showAsAction="never" />
+
+
+</menu>
