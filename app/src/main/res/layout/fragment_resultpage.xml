@@ -156,7 +156,6 @@
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp" />
 
-
     <com.github.mikephil.charting.charts.BarChart
         android:layout_width="300dp"
         android:layout_height="100dp"

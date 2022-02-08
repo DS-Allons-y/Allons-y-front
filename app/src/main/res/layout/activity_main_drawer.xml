@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main_drawer"
+    tools:context=".MainActivity">
+
+    <!-- 드로어 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MOV"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:fontFamily="@font/dohyun"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:padding="15dp"
+            android:textColor="#FFFFFF"
+            android:background="#264713"
+            android:shadowRadius="2.0"
+            android:shadowDx="2.0"
+            android:shadowDy="2.0"
+            android:shadowColor="#A2A19D"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageButton
+            android:id="@+id/drawer_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/menu"
+            android:background="@android:color/transparent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/drawer_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="#264713"
+        android:layout_gravity="start"
+        app:itemTextColor="#ffffff"
+        app:itemIconSize="12dp"
+        app:headerLayout="@layout/drawer_header"
+        app:menu="@menu/drawer_menu"/>
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
