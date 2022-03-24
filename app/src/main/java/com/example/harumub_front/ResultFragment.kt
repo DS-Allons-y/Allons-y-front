@@ -36,16 +36,16 @@ class resultpageFragment : Fragment() {
         adapter = LogAdapter()
         Log.d("태그", "어댑터")
 
-        val layoutManager = LinearLayoutManager(context)
-        view.findViewById<RecyclerView>(R.id.resultpage_recycler).layoutManager = layoutManager
-        view.findViewById<RecyclerView>(R.id.resultpage_recycler).adapter = adapter
+//        val layoutManager = LinearLayoutManager(context)
+//        view.findViewById<RecyclerView>(R.id.resultpage_recycler).layoutManager = layoutManager
+//        view.findViewById<RecyclerView>(R.id.resultpage_recycler).adapter = adapter
 
 
         // 수정할 부분 - DB 연결 필요
-        adapter.items.add(LogData("00:01:23", "happy"))
-        adapter.items.add(LogData("00:04:56", "scary"))
-        adapter.items.add(LogData("00:07:00", "angry"))
-        adapter.items.add(LogData("11:11:11", "anger"))
+//        adapter.items.add(LogData("00:01:23", "happy"))
+//        adapter.items.add(LogData("00:04:56", "scary"))
+//        adapter.items.add(LogData("00:07:00", "angry"))
+//        adapter.items.add(LogData("11:11:11", "anger"))
 
         return view
 

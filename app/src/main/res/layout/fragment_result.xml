@@ -5,199 +5,264 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFF4">
+    android:background="#FFFEF3">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="감상결과"
-        android:layout_gravity="center_horizontal"
-        android:textAlignment="center"
-        android:fontFamily="@font/dohyun"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        android:padding="15dp"
-        android:textColor="#FFFFFF"
-        android:background="#264713"
-        android:shadowRadius="2.0"
-        android:shadowDx="2.0"
-        android:shadowDy="2.0"
-        android:shadowColor="#A2A19D" />
-
-    <!-- 영화정보 -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp"
-        android:orientation="horizontal">
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="제목 - "
+            android:text="감상결과"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
             android:fontFamily="@font/dohyun"
-            android:textSize="20dp"
+            android:textSize="25dp"
             android:textStyle="bold"
-            android:textColor="#808080" />
-        <TextView
+            android:padding="15dp"
+            android:textColor="#FFFFFF"
+            android:background="#264713"
+            android:shadowRadius="2.0"
+            android:shadowDx="2.0"
+            android:shadowDy="2.0"
+            android:shadowColor="#A2A19D" />
+
+        <!-- 영화정보 -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="title"
-            android:textSize="20dp"
-            android:textColor="#808080" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="인상깊었던 장면 - "
-            android:fontFamily="@font/dohyun"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColor="#808080" />
-        <TextView
+            android:layout_marginTop="30dp"
+            android:layout_marginHorizontal="30dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="245dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="제목 - "
+                        android:fontFamily="@font/dohyun"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="#808080" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="title"
+                        android:textSize="20dp"
+                        android:textColor="#808080" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="장르 - "
+                        android:fontFamily="@font/dohyun"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="#808080" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="genres"
+                        android:textSize="20dp"
+                        android:textColor="#808080" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="집중도 - "
+                        android:fontFamily="@font/dohyun"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="#808080" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="00%"
+                        android:textSize="20dp"
+                        android:textColor="#808080" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_height="120dp"
+                android:src="@drawable/spider"
+                android:layout_marginLeft="10dp"/>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="00h 00m 00s"
-            android:textSize="20dp"
-            android:textColor="#808080" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="집중도 - "
-            android:fontFamily="@font/dohyun"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColor="#808080" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="00%"
-            android:textSize="20dp"
-            android:textColor="#808080" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="한줄평 - "
-            android:fontFamily="@font/dohyun"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColor="#808080" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="사용자 개인의 평"
-            android:textSize="20dp"
-            android:textColor="#808080" />
-    </LinearLayout>
-
-
-    <!-- 별점 평가 -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="별점"
-        android:fontFamily="@font/dohyun"
-        android:textSize="20dp"
-        android:textColor="#808080"
-        android:textStyle="bold"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp" />
-
-    <RatingBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        style="@style/Widget.AppCompat.RatingBar"
-        android:numStars="5"
-        android:rating="0"
-        android:stepSize="0.5" />
-
-
-    <!-- 집중도 평가 -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="집중도"
-        android:fontFamily="@font/dohyun"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:textColor="#808080"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp" />
-
-
-    <com.github.mikephil.charting.charts.BarChart
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.471" />
-
-    <!-- 감상로그 -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="감상로그"
-        android:fontFamily="@font/dohyun"
-        android:textSize="20dp"
-        android:textColor="#808080"
-        android:textStyle="bold"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp" />
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/resultpage_recycler"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginBottom="30dp"
-            android:layout_weight="1" />
-    </ScrollView>
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="인상깊었던 장면 - "
+                android:fontFamily="@font/dohyun"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="#808080" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="00h 00m"
+                android:textSize="20dp"
+                android:textColor="#808080" />
+        </LinearLayout>
 
+        <!-- 별점 평가 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="별점"
+            android:fontFamily="@font/dohyun"
+            android:textSize="20dp"
+            android:textColor="#808080"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp" />
+
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            style="@style/Widget.AppCompat.RatingBar"
+            android:numStars="5"
+            android:rating="0"
+            android:stepSize="0.5" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="한줄평 - "
+                android:fontFamily="@font/dohyun"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="#808080" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="사용자 개인의 평"
+                android:textSize="20dp"
+                android:textColor="#808080" />
+        </LinearLayout>
+
+        <!-- 감상로그 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="감상로그"
+            android:fontFamily="@font/dohyun"
+            android:textSize="20dp"
+            android:textColor="#808080"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/emoji1"
+                    android:layout_marginHorizontal="10dp"/>
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/emoji1"
+                    android:layout_marginHorizontal="10dp"/>
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/emoji1"
+                    android:layout_marginHorizontal="10dp"/>
+            </LinearLayout>
+
+
+        <!-- 감상 그래프 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="감정 그래프"
+            android:fontFamily="@font/dohyun"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="#808080"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp" />
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.471" />
+
+        <!-- 하이라이트 장면 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="하이라이트 장면"
+            android:fontFamily="@font/dohyun"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="#808080"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp" />
+        <ImageView
+            android:layout_width="320dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/highlight"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"/>
 
     </LinearLayout>
 </ScrollView>

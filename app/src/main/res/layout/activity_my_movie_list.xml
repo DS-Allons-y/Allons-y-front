@@ -10,7 +10,7 @@
 
     <androidx.drawerlayout.widget.DrawerLayout
 
-        android:id="@+id/main_drawer"
+        android:id="@+id/mylist_drawer"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -79,7 +79,7 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
+        <!-- 드로어 메뉴 -->
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/drawer_view"
             android:layout_width="wrap_content"

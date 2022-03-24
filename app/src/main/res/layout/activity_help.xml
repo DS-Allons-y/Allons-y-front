@@ -1,23 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="600dp"
+    android:background="#FFFEF3">
 
-    <TextView
+    <androidx.drawerlayout.widget.DrawerLayout
+
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="도움말"
-        android:layout_gravity="center_horizontal"
-        android:textAlignment="center"
-        android:fontFamily="@font/dohyun"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        android:padding="15dp"
-        android:textColor="#FFFFFF"
-        android:background="#264713"
-        android:shadowRadius="2.0"
-        android:shadowDx="2.0"
-        android:shadowDy="2.0"
-        android:shadowColor="#A2A19D"/>
+        android:layout_height="match_parent"
+        android:id="@+id/help_drawer">
 
-</LinearLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="#264713"
+                android:fontFamily="@font/dohyun"
+                android:padding="15dp"
+                android:shadowColor="#A2A19D"
+                android:shadowDx="2.0"
+                android:shadowDy="2.0"
+                android:shadowRadius="2.0"
+                android:text="도움말"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="25dp"
+                android:textStyle="normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/drawer_button"
+                android:scaleType="centerInside"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/menu"
+                android:background="@android:color/transparent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <ImageButton
+                android:id="@+id/recent"
+                android:scaleType="centerInside"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="360dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/wallclock"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="200dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="안녕하세요"
+                    android:textSize="12pt"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="하루뭅은 영화 감상 기록을 기반으로 한 영화 추천 시스템입니다.\n\n하루뭅에 대해 같이 알아보아요!"
+                    android:textSize="8pt"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="하루뭅으로 무엇을 할 수 있나요?"
+                    android:textColor="@color/black"
+                    android:textSize="10pt"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/drawer_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#264713"
+            android:layout_gravity="start"
+            app:itemTextColor="#ffffff"
+            app:itemIconSize="12dp"
+            app:headerLayout="@layout/drawer_header"
+            app:menu="@menu/drawer_menu"/>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+</ScrollView>
