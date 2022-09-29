@@ -34,13 +34,20 @@ class SignupActivity_fav : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup_fav)
 
-        var flag = false // 개인정보 동의했는지 확인(기본값 : false, 동의 누르면 true로 바뀜)
+        var flag1 = false // 개인정보 동의했는지 확인(기본값 : false, 동의 누르면 true로 바뀜)
+        var flag2 = false // 개인정보 사후처리방식 확인했는지 확인(기본값 : false, 동의 누르면 true로 바뀜)
 
         // 개인정보 동의 텍스트(링크처럼 보이도록)
-        var ssb = SpannableStringBuilder()
-        ssb.append(personal_check_text.getText())
-        ssb.setSpan(URLSpan("#"), 0, ssb.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-        personal_check_text.setText(ssb, TextView.BufferType.SPANNABLE)
+        var ssb1 = SpannableStringBuilder()
+        ssb1.append(personal_check_text.getText())
+        ssb1.setSpan(URLSpan("#"), 0, ssb1.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        personal_check_text.setText(ssb1, TextView.BufferType.SPANNABLE)
+
+        // 개인정보 사후처리방식 텍스트(링크처럼 보이도록)
+        var ssb2 = SpannableStringBuilder()
+        ssb2.append(process_check_text.getText())
+        ssb2.setSpan(URLSpan("#"), 0, ssb2.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        process_check_text.setText(ssb2, TextView.BufferType.SPANNABLE)
 
 
         retrofitBuilder = RetrofitBuilder
@@ -161,9 +168,8 @@ class SignupActivity_fav : AppCompatActivity() {
                 }
             }
         }
-
+        // 개인정보 이용 동의 체크
         personal_check_text.setOnClickListener {
-
             // 알림창 다이얼로그 띄우기
             val dig = AlertDialog.Builder(this@SignupActivity_fav)
             val dialogView =
@@ -174,15 +180,33 @@ class SignupActivity_fav : AppCompatActivity() {
         }
         personal_check.setOnClickListener {
             if (personal_check.isChecked) {
-                flag = true
+                flag1 = true
             }else if (!personal_check.isChecked){
-                flag = false
+                flag1 = false
+            }
+        }
+
+        // 개인정보 사후처리방식 확인란 체크
+        process_check_text.setOnClickListener {
+            // 알림창 다이얼로그 띄우기
+            val dig = AlertDialog.Builder(this@SignupActivity_fav)
+            val dialogView =
+                View.inflate(this@SignupActivity_fav, R.layout.dialog_processcheck, null)
+            dig.setView(dialogView)
+            dig.setPositiveButton("확인"){dialog, which ->}
+            dig.show()
+        }
+        process_check.setOnClickListener {
+            if (process_check.isChecked) {
+                flag2 = true
+            }else if (!process_check.isChecked){
+                flag2 = false
             }
         }
 
         // 하단 JOIN 버튼 클릭 - 회원 가입 정보 연동 및 액티비티 종료 ->로그인 페이지 호출
         btnJoin.setOnClickListener {
-            if (flag){
+            if (flag1 && flag2){
                 // 사용자가 입력한 값들을 String으로 받아오기
                 val like_movie1 = j_like_movie1.text.toString()
                 val like_movie2 = j_like_movie2.text.toString()
@@ -229,16 +253,22 @@ class SignupActivity_fav : AppCompatActivity() {
 
                         override fun onFailure(call: Call<Void?>, t: Throwable) {
                             //Toast.makeText(this@SignupActivity, "회원가입에 실패했습니다.", Toast.LENGTH_LONG).show()
-
                             //Toast.makeText(this@SignupActivity, t.message, Toast.LENGTH_LONG).show()
-                            Log.d("회원가입 실패 : ", t.message.toString())
+                            Log.e("회원가입 실패 : ", t.message.toString())
                         }
                     })
                 }
             }
-            else {
+            else if(!flag1){
                 // 개인정보 동의하지 않았을 경우
                 Toast.makeText(this, "개인정보 이용에 동의해주세요", Toast.LENGTH_SHORT).show()
+            }
+            else if(!flag2){
+                // 개인정보 사후처리방식 확인하지 않았을 경우
+                Toast.makeText(this, "개인정보 사후처리방식을 확인해주세요", Toast.LENGTH_SHORT).show()
+            }
+            else { // 둘다 체크하지 않았을 경우
+                Toast.makeText(this, "모두 확인 및 체크해주세요", Toast.LENGTH_SHORT).show()
             }
         }
     }

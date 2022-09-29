@@ -24,7 +24,8 @@
                 android:layout_height="wrap_content"
                 android:text="개인정보 수집 ‧ 이용 ‧ 제공 동의서"
                 android:textSize="20dp"
-                android:textColor="#FFFFFF"/>
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"/>
 
             <TextView
                 android:padding="10dp"

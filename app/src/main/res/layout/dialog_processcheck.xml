@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:background="#ff365723">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="개인정보 사후 처리 방식에 대하여"
+                android:textSize="20sp"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 내 소중한 정보, 안전하게 보호되나요? "
+                android:textSize="22sp"
+                android:textColor="#FFFFFF"
+                android:textStyle="italic" />
+
+            <TextView
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- 회원가입 시 진행하는 영화 선호 질문은 로그인 시 영화를 추천하는 데 사용되는 것으로,
+다른 사용자는 사용자가 기입한 선호 질문 정보에 관한 접근 권한이 없습니다. \n\n
+- 영화 감상 시 캡처된 사용자의 모습이 담긴 이미지(이하 캡처 이미지)는 사용자의 감상 분석, 결과 자동 기록 및 영화 추천 시스템에 사용되는 것으로,
+다른 사용자는 캡처 이미지에 관한 접근 권한이 없습니다. \n
+감상 기록 후, 하이라이트 사진(감정의 폭이 가장 큰 장면에서 캡처된 사용자의 모습, 감상 결과 페이지에서 확인 가능)을 제외한
+모든 캡처 이미지는 자동 영구 삭제됩니다. \n\n
+- 이외 성명, 이메일 주소, 영화 선호 질문, 캡처 이미지, 사용자 리뷰 및 결과 정보 등은 오직 사용자 개인을 위한 영화 추천
+및 감상 기록 목적으로만 사용되며, 다른 용도로 사용 및 접근되지 않습니다.\n\n
+- 자세한 사항은 [개인정보 수집 ‧ 이용 ‧ 제공 동의서] 및 [개인정보 보호법]을 참고해주시길 바랍니다."
+                android:textSize="17sp"
+                android:textColor="#ffffff" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+</LinearLayout>

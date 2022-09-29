@@ -6,6 +6,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.Window
 import android.widget.*
@@ -62,7 +63,7 @@ class LoginActivity : AppCompatActivity() {
             map.put("id", id)
             map.put("password", pw)
 
-      ///*
+            ///*
             val call = retrofitInterface.executeLogin(map)
             call!!.enqueue(object : Callback<LoginResult?> {
                 override fun onResponse(call: Call<LoginResult?>, response: Response<LoginResult?>) {
@@ -173,6 +174,7 @@ class LoginActivity : AppCompatActivity() {
                     }
                     else if (response.code() == 400) {
                         //Toast.makeText(this@LoginActivity, "정의되지 않은 사용자", Toast.LENGTH_LONG).show()
+                        Log.e("LoginActivity", "정의되지 않은 사용자: code 400")
                     }
                     else if (response.code() == 404) { // 로그인 실패 시 - 토스트 메시지, 애니메이션 종료
                         Toast.makeText(this@LoginActivity, "로그인 정보를 확인해주세요", Toast.LENGTH_SHORT).show()
@@ -181,12 +183,12 @@ class LoginActivity : AppCompatActivity() {
                 }
                 override fun onFailure(call: Call<LoginResult?>, t: Throwable) {
                     //Toast.makeText(this@LoginActivity, t.message, Toast.LENGTH_LONG).show()
+                    Log.e("LoginActivity", t.message.toString())
                 }
             })
-      //*/
+            //*/
 
-      /*
-            // 추천 오류 실행용
+            /*  // 추천 오류 실행용
             val reco1_titleArray: ArrayList<String> = ArrayList<String>(10)
             for (i in 0..9) reco1_titleArray.add("Toy Story")
             var reco1_posterArray: ArrayList<String> = ArrayList<String>(10)
@@ -236,10 +238,13 @@ class LoginActivity : AppCompatActivity() {
             var reco6_posterArray: ArrayList<String> = ArrayList<String>(10)
             for (i in 0..9) reco6_posterArray.add("/t/p/w300_and_h450_bestv2/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg")
 
+
             // 메인2로 이동
             var intent = Intent(applicationContext, MainActivity::class.java)
-            intent.putExtra("user_id", result.id)
-            intent.putExtra("user_name", result.name)
+//            intent.putExtra("user_id", result.id) //id
+//            intent.putExtra("user_name", result.name) //id
+            intent.putExtra("user_id", id)
+            intent.putExtra("user_name", id)
 
             intent.putExtra("reco1_titleArray", reco1_titleArray)
             intent.putExtra("reco1_posterArray", reco1_posterArray)
@@ -275,10 +280,11 @@ class LoginActivity : AppCompatActivity() {
             // 서버에서 성공한 신호(응답)를 받으면 로딩창 종료
             progressDialog.dismiss()
 
-            Toast.makeText(this@LoginActivity, result.name + "님, 환영합니다.", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this@LoginActivity, result.name + "님, 환영합니다.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@LoginActivity, id + "님, 환영합니다.", Toast.LENGTH_SHORT).show()
 
             startActivityForResult(intent, 0)
-      */
+        */
         }
 
         // 양방향 액티비티 (회원가입 <-> 로그인)

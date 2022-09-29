@@ -17,6 +17,7 @@
         <entry key="..\:/1_Allonsy_Project/.Git/Allons-y-front/Allons-y-front/app/src/main/res/layout/activity_main.xml" value="0.25364583333333335" />
         <entry key="..\:/1_Allonsy_Project/.Git/Allons-y-front/Allons-y-front/app/src/main/res/layout/activity_main2.xml" value="0.264" />
         <entry key="..\:/1_Allonsy_Project/.Git/Allons-y-front/Allons-y-front/app/src/main/res/layout/activity_signup_auth.xml" value="0.12132725430597771" />
+        <entry key="..\:/1_Allonsy_Project/.Git/Allons-y-front/Allons-y-front/app/src/main/res/layout/activity_signup_fav.xml" value="0.176" />
         <entry key="..\:/1_Allonsy_Project/.Git/Allons-y-front/Allons-y-front/app/src/main/res/layout/activity_user_movie_list.xml" value="0.25364583333333335" />
         <entry key="..\:/1_Allonsy_Project/.Git/Allons-y-front/Allons-y-front/app/src/main/res/layout/activity_video_chat_view.xml" value="0.25364583333333335" />
         <entry key="..\:/1_Allonsy_Project/.Git/Allons-y-front/Allons-y-front/app/src/main/res/layout/activity_watch_alone.xml" value="0.13722826086956522" />
@@ -24,6 +25,8 @@
         <entry key="..\:/1_Allonsy_Project/.Git/Allons-y-front/Allons-y-front/app/src/main/res/layout/ard_agora_actionbar.xml" value="0.25364583333333335" />
         <entry key="..\:/1_Allonsy_Project/.Git/Allons-y-front/Allons-y-front/app/src/main/res/layout/dialog_entercode.xml" value="0.161231884057971" />
         <entry key="..\:/1_Allonsy_Project/.Git/Allons-y-front/Allons-y-front/app/src/main/res/layout/dialog_entercode_copy.xml" value="0.161231884057971" />
+        <entry key="..\:/1_Allonsy_Project/.Git/Allons-y-front/Allons-y-front/app/src/main/res/layout/dialog_personalcheck.xml" value="0.264" />
+        <entry key="..\:/1_Allonsy_Project/.Git/Allons-y-front/Allons-y-front/app/src/main/res/layout/dialog_processcheck.xml" value="0.264" />
         <entry key="..\:/1_Allonsy_Project/.Git/Allons-y-front/Allons-y-front/app/src/main/res/layout/fragment_addreview.xml" value="0.264" />
         <entry key="..\:/1_Allonsy_Project/.Git/Allons-y-front/Allons-y-front/app/src/main/res/layout/fragment_result.xml" value="0.1956521739130435" />
         <entry key="..\:/1_Allonsy_Project/.Git/Allons-y-front/Allons-y-front/app/src/main/res/layout/fragment_user_movie_list.xml" value="0.161231884057971" />
