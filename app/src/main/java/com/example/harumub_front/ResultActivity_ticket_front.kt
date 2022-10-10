@@ -364,6 +364,4 @@ class ResultActivity_ticket_front : AppCompatActivity() {
             }.start()
         }
     }
-
-
 }

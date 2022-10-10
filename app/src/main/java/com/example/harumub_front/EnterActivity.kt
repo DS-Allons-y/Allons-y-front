@@ -175,6 +175,8 @@ class EnterActivity: BaseActivity(), NavigationView.OnNavigationItemSelectedList
                     message.text = result!!.roomCode
                     dig.setView(dialogView)
 
+                    val adig = dig.create()
+
                     cancelBtn = dialogView.findViewById<Button>(R.id.cancelBtn)
                     checkBtn = dialogView.findViewById<Button>(R.id.checkBtn)
 
@@ -230,13 +232,17 @@ class EnterActivity: BaseActivity(), NavigationView.OnNavigationItemSelectedList
                         intent.putExtra("reco6_posterArray", reco6_posterArray)
                         startActivity(intent)
 
+                        adig.dismiss()
+
                         Log.w("EnterActivity", "다이얼로그 확인 버튼 클릭 > 방 입장")
                         //Toast.makeText(this@EnterActivity, "방 코드 [" + result.roomCode + "]에 HOST로 입장합니다.", Toast.LENGTH_SHORT).show()
                     }
+
                     cancelBtn.setOnClickListener {
                         //Toast.makeText(this, "취소되었습니다.", Toast.LENGTH_LONG).show()
                     }
-                    dig.show()
+                    
+                    adig.show()
                 } else if (response.code() == 400) {
                     Log.e("EnterActivity", "방 생성 중 오류 발생")
                     //Toast.makeText(this@EnterActivity, "방 생성 중 오류 발생", Toast.LENGTH_LONG).show()
@@ -546,6 +552,7 @@ class EnterActivity: BaseActivity(), NavigationView.OnNavigationItemSelectedList
                         override fun onResponse(call: Call<Void?>, response: Response<Void?>) {
                             if (response.code() == 200) {
                                 val intent = Intent(applicationContext, LoginActivity::class.java) // 두번째 인자에 이동할 액티비티
+                                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
 
                                 Toast.makeText(this@EnterActivity, "로그아웃합니다..", Toast.LENGTH_LONG).show()
                                 startActivity(intent)

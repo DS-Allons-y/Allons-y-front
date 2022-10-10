@@ -134,6 +134,7 @@ class UserMovieListActivity : AppCompatActivity(), NavigationView.OnNavigationIt
         drawer_button.setOnClickListener{
             main_this.openDrawer(GravityCompat.START) // START = left, END : right (드로어가 나오는 방향지정)
         }
+
         // 네비게이션 메뉴 아이템에 클릭 속성 부여
         drawer_view.setNavigationItemSelectedListener(this)
 
@@ -364,6 +365,7 @@ class UserMovieListActivity : AppCompatActivity(), NavigationView.OnNavigationIt
                         override fun onResponse(call: Call<Void?>, response: Response<Void?>) {
                             if (response.code() == 200) {
                                 var intent = Intent(applicationContext, LoginActivity::class.java) // 두번째 인자에 이동할 액티비티
+                                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
 
                                 Toast.makeText(this@UserMovieListActivity, "로그아웃합니다..", Toast.LENGTH_LONG).show()
                                 startActivity(intent)

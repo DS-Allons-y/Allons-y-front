@@ -1,7 +1,6 @@
 package com.example.harumub_front
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
@@ -9,6 +8,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,7 +18,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.util.HashMap
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var retrofitBuilder: RetrofitBuilder
@@ -512,6 +511,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                         override fun onResponse(call: Call<Void?>, response: Response<Void?>) {
                             if (response.code() == 200) {
                                 val intent = Intent(applicationContext, LoginActivity::class.java) // 두번째 인자에 이동할 액티비티
+                                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
 
                                 Toast.makeText(this@MainActivity, "로그아웃합니다..", Toast.LENGTH_LONG).show()
                                 startActivity(intent)
@@ -527,5 +527,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         main_this.closeDrawers() // 네비게이션 뷰 닫기
         return false
+    }
+
+    override fun onBackPressed() { // 뒤로 가기 버튼 막기
+        //super.onBackPressed()
     }
 }

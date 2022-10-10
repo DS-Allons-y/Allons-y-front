@@ -629,6 +629,7 @@ class TogetherActivity : BaseActivity(), DuringCallEventHandler {
                     Log.w("TogetherActivity", "Room & Room Code 삭제")
 
                     // 입장 페이지로 다시 돌아가기
+/*
                     val intent = Intent(applicationContext, EnterActivity::class.java)
                     intent.putExtra("user_id", id)
                     intent.putExtra("reco1_titleArray", reco1_titleArray)
@@ -657,6 +658,8 @@ class TogetherActivity : BaseActivity(), DuringCallEventHandler {
                     intent.putExtra("reco6_posterArray", reco6_posterArray)
                     intent.putExtra("hasJoined", true)
                     startActivity(intent)   // startActivityForResult(intent, 1)
+*/
+                    finish()
                 }
                 else if (response.code() == 400) {
                     Log.w("TogetherActivity", "방 삭제 중 오류 발생")
