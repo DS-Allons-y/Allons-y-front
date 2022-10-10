@@ -528,4 +528,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         main_this.closeDrawers() // 네비게이션 뷰 닫기
         return false
     }
+
+    override fun onBackPressed() { // 뒤로 가기 버튼 막기
+        //super.onBackPressed()
+    }
 }
