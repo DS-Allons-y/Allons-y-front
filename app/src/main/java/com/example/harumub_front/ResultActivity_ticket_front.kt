@@ -24,7 +24,9 @@ class ResultActivity_ticket_front : AppCompatActivity() {
     private lateinit var retrofitBuilder: RetrofitBuilder
     private lateinit var retrofitInterface: RetrofitInterface
 
-    // 현재 로그인하고 있는 사용자 아이디, 선택한 영화 제목, 별점 평가, 한줄평
+    var isPlayed = false
+
+    // 현재 로그인하고 있는 사용자 아이디, 선택한 영화 제목
     lateinit var id : String
     lateinit var movie_title : String
 
@@ -141,10 +143,13 @@ class ResultActivity_ticket_front : AppCompatActivity() {
         reco6_titleArray = intent.getSerializableExtra("reco6_titleArray") as ArrayList<String>
         reco6_posterArray = intent.getSerializableExtra("reco6_posterArray") as ArrayList<String>
 
+        isPlayed = intent.getBooleanExtra("isPlayed", false)
+
         // 리뷰 페이지에서 전달받은 인텐트 데이터 확인
         if (intent.hasExtra("user_id") && intent.hasExtra("movie_title")) {
             Log.d("ResultActivity",
                 "리뷰에서 받아온 id : " + id + " movie_title : " + movie_title)
+            Log.d("ResultActivity", "isPlayed : " + isPlayed)
         }
         else {
             Log.e("ResultActivity", "가져온 데이터 없음")
@@ -362,6 +367,15 @@ class ResultActivity_ticket_front : AppCompatActivity() {
                 totalTicket.context.startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
 
             }.start()
+        }
+    }
+
+    override fun onBackPressed() { // 뒤로 가기 버튼 클릭
+        if (isPlayed) { // 혼자보기 감상을 했을 경우
+            //super.onBackPressed() // 뒤로 가기 막기
+        }
+        else {
+            super.onBackPressed()
         }
     }
 }
