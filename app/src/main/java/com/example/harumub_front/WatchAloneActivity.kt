@@ -360,6 +360,8 @@ class WatchAloneActivity : AppCompatActivity(), SurfaceHolder.Callback {
                         intent.putExtra("reco6_titleArray", reco6_titleArray)
                         intent.putExtra("reco6_posterArray", reco6_posterArray)
 
+                        intent.putExtra("isPlayed", isPlayed)
+
                         startActivity(intent)
 
                         Log.d("text : ", "선택")
@@ -550,6 +552,8 @@ class WatchAloneActivity : AppCompatActivity(), SurfaceHolder.Callback {
                                     intent.putExtra("reco6_titleArray", reco6_titleArray)
                                     intent.putExtra("reco6_posterArray", reco6_posterArray)
 
+                                    intent.putExtra("isPlayed", isPlayed)
+
                                     startActivity(intent)
 
                                     Log.d("WatchAloneEnd : ", "감상 리뷰 작성 페이지로 이동")
@@ -662,6 +666,8 @@ class WatchAloneActivity : AppCompatActivity(), SurfaceHolder.Callback {
 
                                 intent.putExtra("reco6_titleArray", reco6_titleArray)
                                 intent.putExtra("reco6_posterArray", reco6_posterArray)
+
+                                intent.putExtra("isPlayed", isPlayed)
 
                                 startActivity(intent)
 
@@ -1007,6 +1013,8 @@ class WatchAloneActivity : AppCompatActivity(), SurfaceHolder.Callback {
                         intent.putExtra("reco6_titleArray", reco6_titleArray)
                         intent.putExtra("reco6_posterArray", reco6_posterArray)
 
+                        intent.putExtra("isPlayed", isPlayed)
+
                         startActivity(intent)
 
                         Log.d("Dialog : ", "Sleep")
@@ -1160,6 +1168,8 @@ class WatchAloneActivity : AppCompatActivity(), SurfaceHolder.Callback {
 
                                         intent.putExtra("reco6_titleArray", reco6_titleArray)
                                         intent.putExtra("reco6_posterArray", reco6_posterArray)
+
+                                        intent.putExtra("isPlayed", isPlayed)
 
                                         startActivity(intent)
 

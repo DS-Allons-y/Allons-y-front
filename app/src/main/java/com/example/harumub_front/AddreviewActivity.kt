@@ -22,6 +22,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.util.HashMap
+import kotlin.properties.Delegates
 
 class AddreviewActivity : AppCompatActivity() {
 
@@ -30,13 +31,15 @@ class AddreviewActivity : AppCompatActivity() {
     private lateinit var retrofitBuilder: RetrofitBuilder
     private lateinit var retrofitInterface : RetrofitInterface
 
+    private var isPlayed by Delegates.notNull<Boolean>()
+
     private lateinit var myTitle: TextView
     private lateinit var myGenres: TextView
     private lateinit var myPoster: ImageView
 
     var defaultImage = R.drawable.default_poster // 포스터 기본 이미지
 
-    // 현재 로그인하고 있는 사용자 아이디, 선택한 영화 아이디
+    // 현재 로그인하고 있는 사용자 아이디, 선택한 영화 아이디, 선택한 영화의 장르, 선택한 영화의 포스터
     lateinit var id : String
     lateinit var movie_title : String
     lateinit var genres : String
@@ -115,6 +118,8 @@ class AddreviewActivity : AppCompatActivity() {
 
         reco6_titleArray = intent.getSerializableExtra("reco6_titleArray") as ArrayList<String>
         reco6_posterArray = intent.getSerializableExtra("reco6_posterArray") as ArrayList<String>
+
+        isPlayed = intent.getBooleanExtra("isPlayed", false)
 
         // 혼자보기 페이지에서 전달받은 인텐트 데이터 확인
         if (intent.hasExtra("user_id") && intent.hasExtra("movie_title")) {
@@ -230,6 +235,8 @@ class AddreviewActivity : AppCompatActivity() {
 
                             intent.putExtra("reco6_titleArray", reco6_titleArray)
                             intent.putExtra("reco6_posterArray", reco6_posterArray)
+
+                            intent.putExtra("isPlayed", isPlayed)
 
                             startActivityForResult(intent, 0)
                         }

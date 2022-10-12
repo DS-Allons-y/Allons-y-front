@@ -23,6 +23,7 @@ class WatchListAdapter(var id: String, var titles: ArrayList<String>, var poster
     RecyclerView.Adapter<WatchListAdapter.ViewHolder>() {
 
     var defaultImage = R.drawable.default_poster
+    var isPlayed = false
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -98,6 +99,8 @@ class WatchListAdapter(var id: String, var titles: ArrayList<String>, var poster
 
                 intent.putExtra("reco6_titleArray", reco6_titleArray)
                 intent.putExtra("reco6_posterArray", reco6_posterArray)
+
+                intent.putExtra("isPlayed", isPlayed)
 
                 itemView.context.startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
             }
