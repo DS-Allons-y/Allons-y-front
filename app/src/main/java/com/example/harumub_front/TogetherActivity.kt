@@ -629,36 +629,6 @@ class TogetherActivity : BaseActivity(), DuringCallEventHandler {
                     Log.w("TogetherActivity", "Room & Room Code 삭제")
 
                     // 입장 페이지로 다시 돌아가기
-/*
-                    val intent = Intent(applicationContext, EnterActivity::class.java)
-                    intent.putExtra("user_id", id)
-                    intent.putExtra("reco1_titleArray", reco1_titleArray)
-                    intent.putExtra("reco1_posterArray", reco1_posterArray)
-                    intent.putExtra("reco2_1_userId", reco2_1_userId)
-                    intent.putExtra("reco2_2_userId", reco2_2_userId)
-                    intent.putExtra("reco2_3_userId", reco2_3_userId)
-                    intent.putExtra("reco2_4_userId", reco2_4_userId)
-                    intent.putExtra("reco2_5_userId", reco2_5_userId)
-                    intent.putExtra("reco2_1_title", reco2_1_title)
-                    intent.putExtra("reco2_2_title", reco2_2_title)
-                    intent.putExtra("reco2_3_title", reco2_3_title)
-                    intent.putExtra("reco2_4_title", reco2_4_title)
-                    intent.putExtra("reco2_5_title", reco2_5_title)
-                    intent.putExtra("reco2_1_poster", reco2_1_poster)
-                    intent.putExtra("reco2_2_poster", reco2_2_poster)
-                    intent.putExtra("reco2_3_poster", reco2_3_poster)
-                    intent.putExtra("reco2_4_poster", reco2_4_poster)
-                    intent.putExtra("reco2_5_poster", reco2_5_poster)
-                    intent.putExtra("reco3_titleArray", reco3_titleArray)
-                    intent.putExtra("reco3_posterArray", reco3_posterArray)
-                    intent.putExtra("reco4_year", reco4_year)
-                    intent.putExtra("reco4_titleArray", reco4_titleArray)
-                    intent.putExtra("reco4_posterArray", reco4_posterArray)
-                    intent.putExtra("reco6_titleArray", reco6_titleArray)
-                    intent.putExtra("reco6_posterArray", reco6_posterArray)
-                    intent.putExtra("hasJoined", true)
-                    startActivity(intent)   // startActivityForResult(intent, 1)
-*/
                     finish()
                 }
                 else if (response.code() == 400) {

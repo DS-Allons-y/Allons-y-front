@@ -265,6 +265,8 @@ class EnterActivity: BaseActivity(), NavigationView.OnNavigationItemSelectedList
         val dialogView = View.inflate(this, R.layout.dialog_entercode, null)
         dig.setView(dialogView)
 
+        val adig = dig.create()
+
         noBtn = dialogView.findViewById<Button>(R.id.noBtn)
         yesBtn = dialogView.findViewById<Button>(R.id.yesBtn)
 
@@ -320,6 +322,8 @@ class EnterActivity: BaseActivity(), NavigationView.OnNavigationItemSelectedList
                         // startActivityForResult(intent, 0)
                         startActivity(intent)
 
+                        adig.dismiss()
+
                         Log.w("EnterActivity", "다이얼로그 확인 버튼 클릭 > 방 입장")
                     }
                     else if (response.code() == 400) {
@@ -335,11 +339,14 @@ class EnterActivity: BaseActivity(), NavigationView.OnNavigationItemSelectedList
 //                            Toast.LENGTH_LONG).show()
                 }
             })
-        } // 취소 버튼 클릭 시 취소되었다는 토스트 메세지를 보여 줌
+        }
+
+        // 취소 버튼 클릭 시 취소되었다는 토스트 메세지를 보여 줌
         noBtn.setOnClickListener {
             //Toast.makeText(this, "취소되었습니다.", Toast.LENGTH_LONG).show()
         }
-        dig.show()
+
+        adig.show()
     }
 
     fun mainBtn() {
