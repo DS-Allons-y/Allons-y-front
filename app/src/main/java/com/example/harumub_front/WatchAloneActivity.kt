@@ -1039,8 +1039,8 @@ class WatchAloneActivity : AppCompatActivity(), SurfaceHolder.Callback {
         val s3Client = AmazonS3Client(awsCredentials, Region.getRegion(Regions.AP_NORTHEAST_2))
 
         var bucketUrl = s3Client.getResourceUrl("allonsyvideotestbucket", null).toString()
-        var videoName : String? = "avengers.mp4"
-//        var videoName : String? = movie_title + ".mp4" // 영화 검색 페이지에서 선택한 영화 재생
+//        var videoName : String? = "avengers.mp4"
+        var videoName : String? = movie_title + ".mp4" // 영화 검색 페이지에서 선택한 영화 재생
 
         try {
             mediaPlayer.setDataSource(bucketUrl + videoName)
