@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.navigation.NavigationView
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -47,6 +48,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private var layoutManager6: RecyclerView.LayoutManager? = null
     private var adapter6: RecyclerView.Adapter<RecommendAdapter6.ViewHolder>? = null
+
+    // 뒤로 가기 버튼 연속 클릭 대기 시간
+    var mBackWait : Long = 0
 
     // 현재 로그인하고 있는 사용자 아이디, 이름
     lateinit var id : String
@@ -529,7 +533,32 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return false
     }
 
-    override fun onBackPressed() { // 뒤로 가기 버튼 막기
-        //super.onBackPressed()
+    override fun onBackPressed() { // 뒤로 가기 버튼 이벤트
+        // 뒤로가기 버튼 클릭
+        if(System.currentTimeMillis() - mBackWait >= 2000 ) {
+            mBackWait = System.currentTimeMillis()
+            Snackbar.make(findViewById(R.id.MainLayout), "뒤로 가기 버튼을 한 번 더 누르면 로그아웃 됩니다.", Snackbar.LENGTH_LONG).show()
+        }
+        else {
+            // 로그아웃
+            val map = HashMap<String, String>()
+
+            val call = retrofitInterface.executeLogout(map)
+            call!!.enqueue(object : Callback<Void?> {
+                override fun onResponse(call: Call<Void?>, response: Response<Void?>) {
+                    if (response.code() == 200) {
+                        val intent = Intent(applicationContext, LoginActivity::class.java) // 두번째 인자에 이동할 액티비티
+                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+
+                        Toast.makeText(this@MainActivity, "로그아웃합니다..", Toast.LENGTH_LONG).show()
+                        startActivity(intent)
+                    }
+                }
+
+                override fun onFailure(call: Call<Void?>, t: Throwable) {
+                    //Toast.makeText(this@MainActivity, t.message, Toast.LENGTH_LONG).show()
+                }
+            })
+        }
     }
 }
