@@ -1204,6 +1204,7 @@ class WatchAloneActivity : AppCompatActivity(), SurfaceHolder.Callback {
         }
     }
 
+/*
     override fun onBackPressed() { // 뒤로 가기 버튼 클릭
         if (isPlayed) { // 영화를 재생했을 경우(영화 감상을 시작했을 경우)
             //super.onBackPressed() // 뒤로 가기 막기
@@ -1212,6 +1213,7 @@ class WatchAloneActivity : AppCompatActivity(), SurfaceHolder.Callback {
             super.onBackPressed()
         }
     }
+*/
 }
 
 class ProgressDialog2(context: Context?) : Dialog(context!!) {
