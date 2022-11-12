@@ -370,6 +370,7 @@ class ResultActivity_ticket_front : AppCompatActivity() {
         }
     }
 
+/*
     override fun onBackPressed() { // 뒤로 가기 버튼 클릭
         if (isPlayed) { // 혼자보기 감상을 했을 경우
             //super.onBackPressed() // 뒤로 가기 막기
@@ -378,4 +379,5 @@ class ResultActivity_ticket_front : AppCompatActivity() {
             super.onBackPressed()
         }
     }
+*/
 }
