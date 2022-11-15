@@ -496,7 +496,7 @@ class TogetherActivity : BaseActivity(), DuringCallEventHandler {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == CALL_OPTIONS_REQUEST) {
-            Toast.makeText(this@TogetherActivity, data.toString(), Toast.LENGTH_SHORT).show()
+  //          Toast.makeText(this@TogetherActivity, data.toString(), Toast.LENGTH_SHORT).show()
 //            val msgListView = findViewById<View>(R.id.msg_list) as RecyclerView
 //            msgListView.visibility =
 //                if (Constant.DEBUG_INFO_ENABLED) View.VISIBLE else View.INVISIBLE // Debug 정보 활성화 >> 보이기 / 비활성화>> 안보이기
@@ -888,7 +888,7 @@ class TogetherActivity : BaseActivity(), DuringCallEventHandler {
                 if (subType == ConstantApp.AppError.NO_CONNECTION_ERROR) {
                     val msg = getString(R.string.msg_connection_error)
                     //notifyMessageChanged(Message(User(0, null), msg))
-                    showLongToast(msg)
+  //                  showLongToast(msg)
                 }
             }
             AGEventHandler.EVENT_TYPE_ON_DATA_CHANNEL_MSG -> {
